@@ -1,0 +1,17 @@
+$mainWhite: #fff;
+$mainDark: rgb(27, 26, 29);
+$mainGreen: rgb(6, 208, 189);
+$mainHoverGreen: rgba(0, 139, 125, 0.76);
+$mainFont: "Titillium Web", Sans-Serif;
+$headerFont: "Dosis", Sans-Serif;
+
+
+@mixin button {
+  background-color: $mainGreen;
+  color: $mainWhite;
+  font-family: $mainFont;
+  font-size: 20px;
+  padding: 0.5em;
+  letter-spacing: 2px;
+  border-radius: 5px;
+}

@@ -1,0 +1,53 @@
+@import "../../utils/variables.scss";
+
+.Login__Header {
+  text-align: center;
+  font-family: $headerFont;
+}
+
+.Login__Form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid $mainGreen;
+  padding: 0 2em 2em 2em;
+  margin-top: 3em;
+  border-radius: 15px;
+  background-color: rgb(56, 54, 59);
+
+
+  input {
+    width: 60vw;
+    padding: 1em;
+    border: none;
+  }
+
+  input[type="submit"]:hover {
+    background: $mainHoverGreen;
+  }
+
+  .Input__Container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    border-bottom: 1px solid $mainGreen;
+  }
+  input:disabled {
+    background-color: grey;
+  }
+  input:disabled:hover {
+    background-color: grey;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .Login__Form {
+    margin: 3em auto;
+    width: 40vw;
+    
+
+    input{
+      width: 40vw;
+    }
+  }
+}

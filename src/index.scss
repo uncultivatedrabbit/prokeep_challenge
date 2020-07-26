@@ -1,0 +1,49 @@
+@import './utils/variables.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $mainFont;
+  font-size: 20px;
+  color: $mainWhite;
+  background-color: $mainDark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headerFont;
+}
+
+a {
+  text-decoration: none;
+  color: $mainDark;
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input[type="submit"] {
+  @include button;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: $mainHoverGreen;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline-color: $mainGreen;
+}
+
+form {
+  max-width: 1600px;
+}
