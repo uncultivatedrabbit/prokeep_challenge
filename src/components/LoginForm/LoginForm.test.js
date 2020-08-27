@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import AuthApiService from "../../services/auth-api-service";
+import {shallow} from 'enzyme'
 
 describe("Login Form", () => {
   it("renders without crashing", () => {
@@ -15,6 +16,10 @@ describe("Login Form", () => {
     );
     ReactDOM.unmountComponentAtNode(div);
   });
+
+  it('submits form with valid email and password', () => {
+    const wrapper = shallow(<LoginForm/>);
+  })
 
   it("succeeds with a valid email and password", async () => {
     const email = "eve.holt@reqres.in";
