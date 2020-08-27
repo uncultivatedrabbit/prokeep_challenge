@@ -11,8 +11,8 @@ export default function LoginForm() {
     const [userData, setUserData] = useState({
         email: '',
         password: '',
+        isLoggedIn: false,
     });
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     /** @function updates state with user input
      * and verifies the email and password are not < 1 chars
@@ -35,7 +35,6 @@ export default function LoginForm() {
             ...userData,
             [userInput.name]: userInput.value,
         });
-        console.log(userData);
     };
 
     /** @function submits the form to the API
@@ -54,11 +53,17 @@ export default function LoginForm() {
                 setFormDataStatus({ ...formDataStatus, isLoggedIn: true });
                 this.props.history.push('/home');
             })
-            .catch((err) =>
-                setFormDataStatus({
-                    error:
-                        err.error.charAt(0).toUpperCase() + err.error.slice(1),
-                    isLoggedIn: false,
+            .catch(
+                (err) =>
+                    setFormDataStatus({
+                        ...formDataStatus,
+                        error:
+                            err.error.charAt(0).toUpperCase() +
+                            err.error.slice(1),
+                    }),
+                setUserData({
+                    ...userData,
+                    isLoggedIn: true,
                 })
             );
     };
