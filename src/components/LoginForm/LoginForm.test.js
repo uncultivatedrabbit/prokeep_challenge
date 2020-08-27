@@ -17,10 +17,6 @@ describe("Login Form", () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('submits form with valid email and password', () => {
-    const wrapper = shallow(<LoginForm/>);
-  })
-
   it("succeeds with a valid email and password", async () => {
     const email = "eve.holt@reqres.in";
     const password = "test";
